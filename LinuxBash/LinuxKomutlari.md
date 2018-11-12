@@ -357,54 +357,108 @@ Hangi repolardan paketlerin indirileceği __etc/apt/sourcest.list__ altında bul
 
 ## XARGS
 
-Kendisinden önceki komuttan gelen çıktıyı sonraki komuta sırayla argüman olarak verir.
+Kendisinden önceki komuttan gelen çıktıyı sonraki komuta sırayla (tek tek) argüman olarak verir. Pipeline den farkı ise sunduğu extra parametreler ile daha fazla seçenek sağlamasıdır.
+
+`find / -name *.jpg -type f -print | xargs tar -cvzf fotolar.tar.gz` komutu find ile jpg uzantılı dosyaları bulur. Xargs burada find komutundan aldığı çıktıyı sırayla tar komutuna gönderir ve tar komutu bu dosyalardan arşiv dosyası oluşturur.
 
 ## DOSYA ARŞİVLEME İŞLEMLERİ
 
-tar
-gzip
-gunzip
-bzip2
-bunzip2
-rar
-zip
+* `tar` komutu tar arşivleri oluşturmak için kullanılır.
+    * `-c` create: tar dosyası oluşturulucağını belirtir.
+    * `-x` extract: tar dosyasının açılacağını belirtir.
+    * `-t` Tabel of contents: bir tar dosyasının iceriğinin listeleneceğini belirtir.
+    * `-v` verbose: ayrıntılı çıktı almak için kullanılır.
+    * `-f` tar dosyasının ismini belirlememize imkan sağlar.
+    * `-z` arşiv dosyasını gzip ile sıkıştırır.
+    * `-j` arşiv dosyasını bzip2 ile sıkıştırır.
+* `gzip` gzip formatında dosyaları sılıştırır.
+* `gunzip` gzip ile sıkıştırılmış dosyaları açar.
+* `bzip2` bzip2 formatında dosyaları sılıştırır.
+* `bunzip2` bzip2 ile sıkıştırılmış dosyaları açar.
 
 ## DOSYA KOPYALAMA TAŞIMA SİLME
 
-* `cp <kaynak> <hedef>` dosya dopyalamak için kullanılır.
-  * `-i` kopyalarken sorması için. aynı isimde dosya varsa onay bekler.
-  * `-r` recursive. dizin kopyalarden gerekli.
-* `mv` taşıma işlemi yapar. 
+* `cp <kaynak_dosyalar> <hedef/dizin/>` dosya dopyalamak için kullanılır.
+    * `-i` kopyalarken sorması için. aynı isimde dosya varsa onay bekler.
+    * `-r` recursive. Dizinleri kopyalarken gerekli.
+    * `-b` backup dosyası oluşturur.
+    * `-f` işlemi yapmaya zorlar. Yani zorla yapar.
+* `mv <dosya> <hedef/dizin>` dosya taşıma işlemi yapar. Yada dosyanın ismini değiştirmek için kullanılır.
+    * `-f` force: taşima işlemini zorla yapar.
+    * `-n` aynı isimde dosya varsa, üstüne yazılmasını engeller.
 * `rm` dosya silmek için kullanılır.
+    * `-r` recursive. dizin kopyalarden gerekli.
+    * `-f` işlemi yapmaya zorlar. Yani zorla yapar.
+    * `-i` silinecek dosyalar için tek tek onay ister.
 
 ## LİNKLER
 
-* `ln`
+* `ln` komutu link oluşturmak için kullanılır. Kısayol bibi.
+    * `-s` sembolink link oluşturmak için kullanılır. sembolink link dosyanın/dizinin yolubu referans olır. Bu yüzden dosyayı taşıdığınızda, ismini değiştirdiğinizde yada sildiğinizde sembolink link çalışmayacaktır.
+
+`ln` komutunda `s` parametresi kullanılmazsa o zaman hardlink oluşturur. Bu dosyanın diskteki adresini taşır. Bu yüzden dosyayı sildiğinizde, ismini değiştirdiğinizde yada dosyayı taşıdığınızda hala dosyaya ulaşabilirsiniz.
 
 ## KONSOL EDİTÖRLERİ
+
+### Nano
+
+Terminal tabanlı basit bir editördür. Kullanımı kolaydır. Daha önce terminalden editör kullanmadıysanız `nano` ile başlayabilirsiniz.
+
+`nano dosya_adi.txt` şeklinde dosya oluşturup hemen yazmaya başlayabilirsiniz. Dosya ismini vermedende çalıştırabilirsiniz fakat başta dosya ismini vermek daha pratiktir.
+
+Bazı kısayollar:
+
+* `ctrl + G` Yardım sayfasını görüntüler.
+* `ctrl + X` Nano editöründen çıkar. Eğer kaydetmediğiniz değişiklikler varsa onay bekler.
+* `ctrl + O` Doyaya değişiklikleri yazar.
+* `alt + U` Geri al.
+* `alt + E` İleri al.
+
+### Vim
+
+Oldukça gelişmiş terminal tabanlı fantastik özellikleri olan bir editördür. Daha çok profesyönel kullanıcılar tarafından tercih edilir. Kullanımı `nano` ya nazaran daha zordur.
+
+`vim` komutunu başlangıçta komut modunda başlar. Yazma moduna geçmek için `i` (insert) harfine basmanız gerekiyor.
+
+Bazı vim komutları:
+
+* `:q` vi editöründen çıkmak için kullanılır.
+* `:q!` belgeyi kaydetmeden çıkmak için kullanılır.
+* `:w` belgeyi kaydetmek için kullanılır.
+* `:wq` belgeyi kaydeden ardından belgeyi kapatır ve editörden çıkar.
+* `:r` bir dosyanın içeriğini imlecin olduğu konumdan itibaren dosyaya ekler.
+* `:!` işareti vim editöründen komut çalıştırmak için kullanılır.
+* `:r !ls` gibi bir komutla `ls` komutunun çıktısını dosyaya ekleyebilirsiniz.
+* `:n` birden fazla dosya açtıysanız aralarında geçiş yapmak için kullanılır.
+
+Ayrıca vim regex ifadelerle metin düzenlemeyede izin verir. Mesela `:s/ben/sen/g` ifadesi metinde geçen tüm `ben` yazılarınıs `sen` ile değiştirir.
 
 ## NETWORK KOMUTLARI
 
 * `ifconfig` Network yapılandırmasını gösterir.
   * `ifconfig eth0 <ipadresi> <subnetmask>` ip yi manual yapılandırma
+  * `-a` Daha ayrıntılı çıktı verir. Bütün interface leri listeler.
+  * `eth1 up|down` arayüz (interface) yi aktif yada pasif eder. Bu örnekte eth1.
 * `iwconfig` kablosuz ağ bağlantısı bilgilerini gösterir.
 * `ping` ping gönderme işlemi
   * `-c 4` gönderilecek paket sayısını belirler. bu örnekte 4.
-* `traceroute` Hedefa ulaşana kadar yolu gösteren komut.
-* `netstat` ağ  bağlantısı yönlendirme tablosu ile ilgili bilgi verir.
-  * `netstat -antp`
-* `whois` whois sorgulaması yapar
+  * `-f` çok hızlı sayıda ping gönderir. root yetkisi gereklidir.
+* `traceroute` Hedefa ulaşana kadar yolu gösterir. Icmp paketlerini kullanır.
+* `netstat` ağ bağlantısı yönlendirme tablosu ile ilgili bilgi verir. 
+    * `-a` Tüm TCP ve UDP bağlantıları görüntüler.
+    * `-e` Gelen ve giden paket sayısının istatistiklerini görüntüler.
+    * `-p` Tüm bağlantıları PID numarası ve uygulama adına göre listeler.
+    * `-r` ip yönlendirme tablosunu görüntüler.
+    * `-i` interface tablosunu görüntüler.
+    * `netstat -antp`
+* `whois` whois sorgulaması yapar.
 * `nslookup` domain ip sorgulaması yapar.
 * `dig` domain ip ile ilgili ayrıntılı bilgi verir.
-* `host`
+* `host` dns lookup işlemleri için basit bir komuttur.
 * `route` yönlendirme tablosu ile ilgili bilgi verir.
 * `arp` arp tablosunu görüntüler.
-* `wget`
-
-Dns ile ilgili kayıtlar /etc/resolv.conf dosyasında tutulur.
-
-## Zamanlanmış görevler
-
-* `cron`
-
-## Log Dosyaları
+* `wget` terminal tabanlı bir indirme yöneticisidir.
+    * `-o <isim>` dosyayı farklı bir isismle kaydeder.
+    * `-c` yarım kalmış indirmeleri devam ettirir.
+    * `––limit-rate` indirme işlemine hız sınırı koyar.
+* `curl` bir çok protokolü destekleten bir network aracıdır. 

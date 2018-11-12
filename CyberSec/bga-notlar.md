@@ -128,3 +128,48 @@ cve nedir
 cvss risk seviyeleri
 nessus yazılımı
 openvas
+
+## BÖLÜM 4
+
+__exploit__ varolan bir güvenli zaafiyetini istismar ederek sisteme sızmaya yol açacak yazılım/script.
+* local exploit
+* remote exploit
+* dos exploit: sistemi erişilemez kılan exploit dir. Diğerlerine nazaran daha az tehlikelidir.
+* zero-day exploit
+
+payload
+shellcode
+
+msfconsole temel komutlar:
+* `?` yardım menüsü
+* `back` bir adım geriye dön
+* `banner` açılış bannerini göster
+* `cd` dizin atlamak için kullanılır.
+* `color` renk seçeneklerini ayarlar.
+* `connect` uzak sunucu ile bağlantı kurar.
+* `exit` çıkış yap
+* `help` yardım menüsü
+* `info` modül hakkında bilgi verir.
+
+## BÖLÜM 5
+
+__meterpreter__ metasploit deki payloadlardan bir tanesidir.
+__pivoting__ bir sisteme sızmadan önce o sisteme doğrudan erişimi olan bir bilgisayarı ele geçirip o bilgisayar üzerinden sızmaktır.
+__mimikatz__ windows sistemlerde kullanıcı şifre ve sarbaros biletlerini almak için kullanılan bir araçtır.
+__ettercap__ 
+hijacking
+__openssh__ normal ssh ın açık kaynak hali.
+
+
+
+## BÖLÜM 6
+
+ssl sarmalayıcı
+stunnel
+pasif/aktif sniffing
+snoop
+snort
+dsniff
+TCPDUMP
+hping taraması
+ngrep
