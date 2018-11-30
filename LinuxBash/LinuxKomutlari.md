@@ -71,6 +71,7 @@ Kullanıcı ile çekirdek arasında yer alır ve kullancıdan gelen komutarı yo
 * `clear` komutu terminali temizler. Aynı işi `ctrl + L` kısayolu ile de yapabiliriz.
 * `ctrl + U` satırı temizler. bazen yanlış bi şeyler yazdığımızda uzunca backspace ye basmaktan kurtarır.
 * `ctrl + C` çalışan komutu kesmek durdurmak için kullanılır.
+* `ctrl + Z` komutu arka plana gönder.
 * `exit` terminalden çıkmak için kullanılır. Aynı şeyi `ctrl + D` kısayolu ile de yapabiliriz.
 * `history` komutu daha önce kullanılan komutları listeler. Daha önce kullandığımız komutlar ".bash_history" dosyasına kaydedilir. Bu dosya gizli bir dosyadır. `history` lomutuda bu dosyayı okuyarak listeler. Eğer bu dosyanın içeriği silinirse `history` komutu da çalışmaz fakat biz komutlar kullandıkça buraya kaydedilecektir.
     * `history 20` son 20 komutu listeler.

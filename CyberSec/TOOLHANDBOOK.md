@@ -26,3 +26,21 @@ __crunch__
 __aircrack__
 __rsa ctf tool__
 __rsa tool__
+
+__scp__ secure copy manasına gelir. güvenli dosya transferi. 
+```text
+scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file] 
+    [-l limit] [-o ssh_option] [-P port] [-S program]
+    [[user@]host1:]file1 ... [[user@]host2:]file2
+```
+
+__cewl__ bir web sitesindeki kelimeler ile wordlist oluşturur.
+```text
+root@kali:~# cewl -d 2 -m 5 -w docswords.txt http://docs.kali.org
+
+-d: derinlik
+-m: minimum kelime uzunluğu
+-w: kelimelerin kaydedileceği dosya
+```
+
+__hydra__  yada __xhydra__ gui. bir network login şifresi kırma aracıdır. çok hızlıdır ve birçok protokolü destekler.
