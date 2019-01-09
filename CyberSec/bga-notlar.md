@@ -216,31 +216,25 @@ HTTP TÜNELLEME
 DNS tünellme
 
 __snort__ gpl lisanslı ids/ips programı
-__kismet__ kablosuz ağ dinleme izleme yazılımı. 
+__kismet__ kablosuz ağ dinleme izleme yazılımı.
 __veil framework__ antivirüs atlatmak için framework. encoding yöntemleri kullanır.
 
 ## BÖLÜM 10
 
 http türleri delete put post get
-webdaw
 
 ## BÖLÜM 11
 
-trace.axd
 google hacking
-owasp dirbuster
-wfuzz
-owasp zap
-tamper data
-paros, web scarap, firefox http tamper
-firecat
-sanitize nedir
+
+* `dirbuster` aracı `dirb` benzeri dizin taramak için geliştirilmiş bir programdır.
+* `wfuzz` gelişmiş bir bruteforce aracıdır.
+
+`owasp zap` burpsuite tarzı proxy web security aracı
 XSS NEDİR
     reflected
     stored
     dom based
-myscape worm
-owasp zenotix xss test framework
 
 ## BÖLÜM 12
 
@@ -256,13 +250,46 @@ url encoding
 sqlmap absinthe pangolin
 remote file inclusion
 local file inclusion
-fmap
 command injection
 csrf saldırısı nedir
-idor açıklığı
 remote code execution
 waf çalışma yapısı
     positive sec model
     negative sec model
     öğrenme tabanlı
-rot 13
+
+## BÖLÜM 13
+
+pki
+simetrik şifreleme
+asimetrik şifreleme
+hash algoritmaları
+    * sha 128 256 512
+    * md5
+encoding decoding nedir
+    url encoding 
+    base 32 64 ...
+    hex encoding
+sayısal zaman damgası nasıl çalışır. log kayıtlarında
+active directory
+
+## BÖLÜM 14
+
+ilişkisel sözlük üretme awlg
+ubc4win winntpasswd
+ophcrack
+salt nasıl çalışır
+şifre kırma yöntemleri
+keyloggerlar
+
+## bölüm 15
+
+ip spoofing
+fastflux networks
+hping
+ddos türleri
+dhcp syn fin ack dos türleri
+synflood
+netstress juno 
+syn cookie / syn proxy
+synflood engelleme

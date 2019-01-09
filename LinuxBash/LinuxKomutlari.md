@@ -171,10 +171,10 @@ Sisteme yapılan bütün bağlantılar __/var/log/wtmp__ dosyasında bulunur. bu
 
 Sisteme kullancı eklendiği zaman passwd shadow dosyalarına kullanıcı ile ilgili kayıt eklenir, kullanıcı için home dizini oluşturulur, kullanıcı için group oluşturulur ve bu grubun üyesi yapılır.
 
-__/etc/passwd__ dosyadına ait bir kayır __AAA:x:1000:1000:,,,:/home/AAA:/bin/bash__ şeklindedir. İki nokta ile birbirinden ayrılır. AAA kullanıcının ismi, x eski sürüm linuxlarda kullanıcının parolasının hash hali (şimdi parolalar shadow dosyasında bulunur), 1000 kullanıcı numarasını, 2. 1000 ise kullanıcının grubunu, virgülle ayrılan yerlerde ise kullanıcıya ait diğer bilgiler, /home/AAA ise kullanıcının home dizinini, son kısım ise kullanıcının çalışacağı kabuğu belirtir.
+__/etc/passwd__ dosyadına ait bir kayıt __AAA:x:1000:1000:,,,:/home/AAA:/bin/bash__ şeklindedir. İki nokta ile birbirinden ayrılır. AAA kullanıcının ismi, x eski sürüm linuxlarda kullanıcının parolasının hash hali (şimdi parolalar shadow dosyasında bulunur), 1000 kullanıcı numarasını, 2. 1000 ise kullanıcının grubunu, virgülle ayrılan yerlerde ise kullanıcıya ait diğer bilgiler, /home/AAA ise kullanıcının home dizinini, son kısım ise kullanıcının çalışacağı kabuğu belirtir.
 
 shadow dosyasından bir kayıt: 
-___AAA:$6$ttZw7OIi$LjmBdapfyNA6kKrXnAcF1xkjnmQCGcLN3hsNrwZmEZkNPAPmoRqD9KYF5TngV60FAlecJine.Qv5v28uO2p8z.:15944:0:99999:7:::__
+__AAA:$6$ttZw7OIi$LjmBdapfyNA6kKrXnAcF1xkjnmQCGcLN3hsNrwZmEZkNPAPmoRqD9KYF5TngV60FAlecJine.Qv5v28uO2p8z.:15944:0:99999:7:::__
 
 Bu kaydı incelediğimizde AAA kullanıcının adı, 2. bölüm kullanıcının şifresinin hash+salt halidir. bu bölüm $ işareti ile ayrılır. 1. ile 2. $ arasındaki değer hangi hash algoritmasının kullanıldığını belirtir.
 
